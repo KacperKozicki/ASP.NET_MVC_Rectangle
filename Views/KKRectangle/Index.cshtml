@@ -1,0 +1,33 @@
+﻿@model List<Rectangle.Models.KKRectangleModel>
+
+<h2>Lista prostokątów</h2>
+<a class="btn btn-primary" asp-action="Create">Dodaj nowy wpis</a>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Wysokość</th>
+            <th>Szerokość</th>
+            <th>Data i czas</th>
+            <th>Szczegóły</th>
+        </tr>
+    </thead>
+    @if (Model.Count > 0)
+    {
+        <tbody>
+            @foreach (var rect in Model)
+            {
+                <tr>
+                    <td>@rect.Id</td>
+                    <td>@rect.Height @rect.HeightUnit</td>
+                    <td>@rect.Width @rect.WidthUnit</td>
+                    <td>@rect.Time.ToString("dd-MM-yyyy HH:mm:ss")</td>
+                    <td>
+                        <a asp-action="Details" asp-route-id="@rect.Id">Szczegóły</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    }
+</table>

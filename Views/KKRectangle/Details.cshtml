@@ -1,0 +1,22 @@
+﻿@model Rectangle.Models.KKRectangleModel
+
+<h2>Szczegóły prostokąta</h2>
+
+<div>
+    <dl class="row">
+        <dt class="col-sm-2">ID:</dt>
+        <dd class="col-sm-10">@Model.Id</dd>
+
+        <dt class="col-sm-2">Wysokość:</dt>
+        <dd class="col-sm-10">@Model.Height @Model.HeightUnit</dd>
+
+        <dt class="col-sm-2">Szerokość:</dt>
+        <dd class="col-sm-10">@Model.Width @Model.WidthUnit</dd>
+
+        <dt class="col-sm-2">Pole:</dt>
+        <dd class="col-sm-10">@Model.Area m^2</dd>
+
+        <dt class="col-sm-2">Data i czas:</dt>
+        <dd class="col-sm-10">@Model.Time.ToString("dd-MM-yyyy HH:mm:ss")</dd>
+    </dl>
+</div>
